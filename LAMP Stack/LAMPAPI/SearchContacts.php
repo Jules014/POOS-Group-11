@@ -26,7 +26,12 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '{"ID" : "' . $row["ID"].'", "FirstName" : "' . $row["FirstName"]. '", "LastName" : "' . $row["LastName"]. '", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '", "UserID" : "' . $row["UserID"].'"}';
+			$searchResults .= '{"ID" : "' . $row["ID"].'",
+   					"FirstName" : "' . $row["FirstName"]. '",
+					"LastName" : "' . $row["LastName"]. '",
+     					"Phone" : "' . $row["Phone"]. '",
+	  				"Email" : "' . $row["Email"]. '",
+       					"UserID" : "' . $row["UserID"].'"}';
 		}
 		
 		if( $searchCount == 0 )
