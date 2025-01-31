@@ -13,6 +13,17 @@
 	} 
 	else
 	{
+		$query = $conn->prepare("SELECT * FROM Users WHERE Login =?");
+		$query->bind_param("s", $login); 
+		$query->execute();
+		$query->store_result(); 
+		$result = $query->num_rows;
+
+		if ($result > 0) {
+    			returnWithError("Login Already Exists!");
+			exit();
+		}
+
 		$stmt = $conn->prepare("INSERT into Users (FirstName,LastName,Login,Password) VALUES(?,?,?,?)");
 		$stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 		$stmt->execute();
