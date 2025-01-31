@@ -10,16 +10,16 @@
 <body>
     <h1>My Contacts</h1>
     <div class="container">
-        <div class= add-contact">
+        <div class="add-contact">
             <h2>Add Contact</h2>
-            <input type="text"id="name" temp="Name">
-            <input type="text"id="phone" temp="Phone">
-            <input type="text"id="email" temp="Email">
-            <button click="addContact()">Add</button>
+            <input type="text"id="name" placeholder="Name">
+            <input type="text"id="phone" placeholder="Phone">
+            <input type="text"id="email" placeholder="Email">
+            <button onclick="addContact()">Add</button>
         </div>
         <div class="contact-list">
             <h2>Contact List</h2>
-            <input type="text"id="search" temp="Search Contact" keyup="SearchContacts()">
+            <input type="text"id="search" temp="Search Contact" onkeyup="SearchContacts()">
             <table>
                 <thread>
                     </tr>
@@ -28,10 +28,10 @@
                     <th>Email</th>
                     <th>Actions</th>
                 </tr>
-                </thread>thread>
+                </thead>
                 <tbody id="contactTableBody">
                     <!-- Contacts will be added here dynamically -->
-                </tbody>tbody>
+                </tbody>
             </table>
         </div>
     </div>
