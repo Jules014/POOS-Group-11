@@ -4,12 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>My Contacts</title>
     <link rel="stylesheet" href="contacts.css">
-    <script type="text/javascript" src="js/code.js"></script>
-    <script type="text/javascript" src="js/md5.js"></script>
 </head>
-
 <body>
-    
+    <h1>My Contacts</h1>
+    <div class="container">
+        <div class= add-contact">
+            <h2>Add Contact</h2>
+            <input type="text"id="name" temp="Name">
+            <input type="text"id="phone" temp="Phone">
+            <input type="text"id="email" temp="Email">
+            <button click="addContact()">Add</button>
+        </div>
+        <div class="contact-list">
+            <h2>Contact List</h2>
+            <input type="text"id="search" temp+"Search Contact" keyup="SearchContacts()">
+            <table>
+                <thread>
+                    </tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+                </thread>thread>
+                <tbody id="contactTableBody">
+                    <!-- Contacts will be added here dynamically -->
+                </tbody>tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/code.js"></script>
 </body>
+</html>
