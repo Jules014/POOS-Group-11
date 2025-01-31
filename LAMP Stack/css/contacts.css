@@ -1,0 +1,7 @@
+body {
+    background-image: url("http://cop4331-11.com/images/birdbackground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}

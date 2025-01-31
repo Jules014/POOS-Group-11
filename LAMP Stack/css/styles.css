@@ -1,16 +1,26 @@
 body 
 {
-    background-color: #707070;
+    background-image: url("http://cop4331-11.com/images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 #title 
 {
-    font-size: 40px;
-    width: 100%;
-    margin: 2% 5%;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    display: table;
+    font-size: 45px;
+    width: auto;
+    margin: auto;
+    padding: 25px;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     color: #FFFFFF;
+    background-color: #000042;
 }
 
 #loginDiv
@@ -89,7 +99,7 @@ input[type="text"],input[type="password"]{
     margin-left: 5%;
     margin-bottom: 2%;
     font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+    color: #FFFFFF;
 }
 
 #loginResult{
