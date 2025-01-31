@@ -1,9 +1,91 @@
-const urlBase = 'http://COP4331-5.com/LAMPAPI';
+const urlBase = 'http://COP4331-11.com/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
 let firstName = "";
 let lastName = "";
+
+function doSignup()
+{
+    firstName = document.getElementById("firstName").value;
+    lastName = document.getElementById("lastName").value;
+    let login = document.getElementById("loginName").value;
+    let password = document.getElementById("loginPassword").value;
+
+    // Check for empty logins
+    let hasAlphanumeric = false;
+    for (let i = 0; i < login.length; i++) {
+	if ((login.charAt(i) >= '1' && login.charAt(i) <= '9') || (login.charAt(i) >= 'a' && login.charAt(i) <= 'z') || (login.charAt(i) >= 'A' && login.charAt(i) <= 'Z')) hasAlphanumeric = true;
+    }
+    if (!hasAlphanumeric)
+    {
+	document.getElementById("loginResult").innerHTML = "Your username must have at least one letter or one number.";
+	return;
+    }	
+    // Check if the password is at least eight characters long
+    if (password.length < 8)
+    {
+	document.getElementById("loginResult").innerHTML = "Your password must be at least eight characters long.";
+	return;
+    }
+    // Check if the password has at least one number and letter
+    let hasNumber = false;
+    let hasUppercaseLetter = false;
+    let hasLowercaseLetter = false;
+    for (let i = 0; i < password.length; i++) {
+	if (password.charAt(i) >= '0' && password.charAt(i) <= '9') hasNumber = true;
+	if (password.charAt(i) >= 'a' && password.charAt(i) <= 'z') hasLowercaseLetter = true;
+	if (password.charAt(i) >= 'A' && password.charAt(i) <= 'Z') hasUppercaseLetter = true;
+    }
+    if (!hasLowercaseLetter)
+    {
+	document.getElementById("loginResult").innerHTML = "Your password must have at least one lowercase letter.";
+	return;
+    }
+    if (!hasUppercaseLetter)
+    {
+	document.getElementById("loginResult").innerHTML = "Your password must have at least one uppercase letter.";
+	return;
+    }
+    if (!hasNumber)
+    {		
+	document.getElementById("loginResult").innerHTML = "Your password must have at least one number.";
+	return;
+    }
+
+//    var passHash = md5(password);
+    let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
+    let jsonPayload = JSON.stringify(tmp);
+    let url = urlBase + '/Register.' + extension;
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try
+    {
+	xhr.onreadystatechange = function() 
+	{
+	    if (this.readyState == 4 && this.status == 200) 
+	    {
+		let jsonObject = JSON.parse( xhr.responseText );
+		document.getElementById("loginResult").innerHTML = "User successfully added. Please return to the login page to access your new contact manager!";
+//		userId = jsonObject.id;
+//		firstName = jsonObject.firstName;
+//		lastName = jsonObject.lastName;
+//		saveCookie();
+	    }
+	};
+	xhr.send(jsonPayload);
+    }
+    catch(err)
+    {
+	document.getElementById("loginResult").innerHTML = err.message;
+    }
+    
+    // Check if the login already exists
+    // (Maybe) check if the password fulfills certain requirements
+    // Add user data to the database
+}
+
 
 function doLogin()
 {
@@ -181,5 +263,4 @@ function searchColor()
 	{
 		document.getElementById("colorSearchResult").innerHTML = err.message;
 	}
-	
 }
