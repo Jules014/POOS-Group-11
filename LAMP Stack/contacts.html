@@ -13,9 +13,11 @@
     <div class="container">
         <div class="add-contact">
             <h2>Add Contact</h2>
-            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="firstName" name="firstName" placeholder="First Name">
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name">
             <input type="text" id="phone" placeholder="Phone">
             <input type="email" id="email" placeholder="Email">
+            <input type="text" id="userID" name="userID" placeholder="User ID">
             <button onclick="addContact()">Add</button>
         </div>
         <div class="contact-list">
@@ -24,9 +26,11 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
                         <th>Phone</th>
                         <th>Email</th>
+                        <th>User ID</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
