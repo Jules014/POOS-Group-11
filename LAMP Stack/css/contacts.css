@@ -8,6 +8,8 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    /*default color*/
+    color: #333;
 }
 
 .container {
@@ -17,12 +19,12 @@ body {
     margin-top: 50px;
 }
 
-.add-contact, .contact-list {
+.add-contact {
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 450px;
+    width: 250px;
 }
 
 .contact-list {
@@ -30,10 +32,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    min-height: 200px;
-    max-height: 500px;
+    width: 600px;
     overflow-y: auto;
+    max-height: 500px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -51,19 +52,26 @@ h2 {
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px 15px;
     margin: 5px 0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
 }
 
 button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
@@ -73,15 +81,27 @@ button:hover {
     background-color: #0056b3;
 }
 
+.contact-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.contact-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: left;
+    font-size: 16px;
 }
 
 th {
@@ -93,20 +113,32 @@ tr:last-child td {
     border-bottom: none;
 }
 
+/*edit and delete button*/
 .edit-btn {
     background-color: #28a745;
-    padding: 5px 10px;
+    padding: 8px 12px;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
+    margin-right: 5px;
+    font-size: 14px;
 }
 
 .delete-btn {
     background-color: #dc3545;
-    padding: 5px 10px;
+    padding: 8px 12px;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
 }
