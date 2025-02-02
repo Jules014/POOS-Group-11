@@ -4,16 +4,12 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-
-//centering the Contact Manager
-body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-//main Container
 .container {
     display: flex;
     justify-content: center;
@@ -21,7 +17,6 @@ body {
     margin-top: 50px;
 }
 
-//contact Form and List Styling
 .add-contact, .contact-list {
     background: white;
     padding: 20px;
@@ -30,7 +25,6 @@ body {
     width: 350px;
 }
 
-//titles
 h1 {
     font-size: 28px;
     margin-top: 20px;
@@ -43,7 +37,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-//input fields
 input {
     width: 100%;
     padding: 10px;
@@ -52,7 +45,6 @@ input {
     border-radius: 5px;
 }
 
-//button styling
 button {
     background-color: #007bff;
     color: white;
@@ -69,7 +61,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-//contact list table
 table {
     width: 100%;
     border-collapse: collapse;
@@ -90,7 +81,6 @@ tr:last-child td {
     border-bottom: none;
 }
 
-//edit and delete buttons
 .edit-btn {
     background-color: #28a745;
     padding: 5px 10px;
@@ -107,6 +97,4 @@ tr:last-child td {
     border-radius: 5px;
     border: none;
     cursor: pointer;
-}
-
 }
