@@ -25,6 +25,18 @@ body {
     width: 450px;
 }
 
+.contact-list {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    min-height: 200px;
+    max-height: 500px;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+
 h1 {
     font-size: 28px;
     margin-top: 20px;
